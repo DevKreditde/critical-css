@@ -1,5 +1,5 @@
 {
-  "name": "artemsky/critical-css",
+  "name": "getmaple/critical-css",
   "description": "A Laravel package for generating and using inline critical-path CSS.",
   "keywords": ["css", "performance", "laravel"],
   "authors": [
@@ -19,7 +19,7 @@
     "symfony/process": "~4.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "~7.0",
+    "phpunit/phpunit": "~6.0",
     "mockery/mockery": "~0.9"
   },
   "autoload": {
