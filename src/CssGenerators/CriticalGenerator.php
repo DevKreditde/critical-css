@@ -102,46 +102,11 @@ class CriticalGenerator implements CssGeneratorInterface
             $cmd[] = '--ignore='.$ignore;
         }
 
-        $cmd[] = '--timeout='.$this->timeout;
-
-
-        $process = new Process(
-            $cmd,
-            null,
-            null,
-            $html,
-            $this->timeout,
-            null
-        );
-
-/*
-        $builder->setPrefix($this->criticalBin);
-
-        $builder->setArguments([
-            '--base='.realpath(__DIR__.'/../.tmp'),
-            '--width='.$this->width,
-            '--height='.$this->height,
-            '--minify',
-        ]);
-
-        if (!is_null($this->timeout)) {
-            $builder->setTimeout($this->timeout);
-
-            $builder->add('--timeout='.$this->timeout);
+        if (! is_null($this->timeout)) {
+            $cmd[] = '--timeout='.$this->timeout;
         }
 
-        foreach ($this->css as $css) {
-            $builder->add('--css='.$css);
-        }
-
-        foreach ($this->ignore as $ignore) {
-            $builder->add('--ignore='.$ignore);
-        }
-
-        $builder->setInput($html);
-*/
-
-        // $process = $builder->getProcess();
+        $process = new Process($cmd, null, null, $html, $this->timeout);
 
         $process->run();
 
